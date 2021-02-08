@@ -22,7 +22,7 @@ jobs:
           persist-credentials: false
 
       - name: sync LXK9301-scripts
-        uses: repo-sync/GIT_HUB-sync@v2
+        uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
           source_repo: "https://gitee.com/lxk0301/jd_scripts.git"
@@ -34,7 +34,7 @@ jobs:
         uses: Yikun/hub-mirror-action@master
         if: env.dst_key
         with:
-          src: GIT_HUB/LXK9301
+          src: github/LXK9301
           dst: gitee/lxk0301
           static_list: "jd_scripts"
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
