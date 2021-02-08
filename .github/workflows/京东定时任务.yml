@@ -39,8 +39,8 @@ jobs:
         if: env.JD_COOKIE
         run: |
           cd ~/JD_scripts
-          git checkout jd_code
           npm install
+    
       - name: '运行 【签到】'
         run: |
           cd ~/JD_scripts
