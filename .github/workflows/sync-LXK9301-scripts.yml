@@ -36,6 +36,6 @@ jobs:
         with:
           src: github/LXK9301
           dst: gitee/lxk0301
-          static_list: "jd_scripts"
+          static_list: "JD_scripts"
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
           dst_token: ${{ secrets.GITEE_TOKEN }}
