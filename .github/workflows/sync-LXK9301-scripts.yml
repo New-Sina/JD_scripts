@@ -5,8 +5,7 @@ on:
   workflow_dispatch:
   watch:
     types: started
-  push:
-    branches: [ master ]
+
   repository_dispatch:
     types: sync-LXK9301-scripts
 jobs:
