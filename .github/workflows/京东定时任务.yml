@@ -39,7 +39,7 @@ jobs:
         if: env.JD_COOKIE
         run: |
           cd ~/JD_scripts
-          git checkout master
+          git checkout jd_code
           npm install
     
       - name: '运行 【签到】'
@@ -58,12 +58,12 @@ jobs:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
 #          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
-      - name: '运行 【京喜签到】'
-        run: |
-          cd ~/JD_scripts
-          node jingxi.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+#       - name: '运行 【京喜签到】'
+#         run: |
+#           cd ~/JD_scripts
+#           node jingxi.js
+#         env:
+#           JD_COOKIE: ${{ secrets.JD_COOKIE }}
 #          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
