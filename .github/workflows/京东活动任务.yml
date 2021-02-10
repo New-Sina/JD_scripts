@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         if: env.JD_COOKIE
         run: |
-          git clone https://github.com/New-Sina/JD_scripts.git ~/TaskAction
+          git clone https://github.com/New-Sina/JD_scripts.git ~/JD_scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         if: env.JD_COOKIE
@@ -43,7 +43,7 @@ jobs:
           npm install
       - name: '运行 【京东手机年终奖】'
         run: |
-          cd ~/TaskAction
+          cd ~/JD_scripts
           node jd_festival.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
@@ -52,7 +52,7 @@ jobs:
 
       - name: '运行 【京东年货节】'
         run: |
-          cd ~/TaskAction
+          cd ~/JD_scripts
           node jd_nh.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
@@ -60,7 +60,7 @@ jobs:
 
       - name: '运行 【京东压岁钱】'
         run: |
-          cd ~/TaskAction
+          cd ~/JD_scripts
           node jd_newYearMoney.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
@@ -68,8 +68,24 @@ jobs:
 
       - name: '运行 【京东压岁钱抢百元卡】'
         run: |
-          cd ~/TaskAction
+          cd ~/JD_scripts
           node jd_newYearMoney_lottery.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
+      - name: '运行 【京东环球挑战赛】'
+        run: |
+          cd ~/JD_scripts
+          node jd_global.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+      
+
+
+
+
+
+
+
