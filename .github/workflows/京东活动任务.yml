@@ -38,9 +38,11 @@ jobs:
       - name: npm install
         if: env.JD_COOKIE
         run: |
-          cd ~/TaskAction
+          cd ~/JD_scripts
           git checkout jd_code
           npm install
+      
+      
       - name: '运行 【京东手机年终奖】'
         run: |
           cd ~/JD_scripts
@@ -58,6 +60,7 @@ jobs:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
+      
       - name: '运行 【京东压岁钱】'
         run: |
           cd ~/JD_scripts
@@ -66,6 +69,7 @@ jobs:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
+      
       - name: '运行 【京东压岁钱抢百元卡】'
         run: |
           cd ~/JD_scripts
@@ -74,6 +78,7 @@ jobs:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
+      
       - name: '运行 【京东环球挑战赛】'
         run: |
           cd ~/JD_scripts
@@ -82,6 +87,8 @@ jobs:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
       
+
+
 
 
 
