@@ -43,22 +43,22 @@ jobs:
           npm install
       
       
-      - name: '运行 【京东手机年终奖】'
-        run: |
-          cd ~/JD_scripts
-          node jd_festival.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+#       - name: '运行 【京东手机年终奖】'
+#         run: |
+#           cd ~/JD_scripts
+#           node jd_festival.js
+#         env:
+#           JD_COOKIE: ${{ secrets.JD_COOKIE }}
+#           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
-      - name: '运行 【京东年货节】'
-        run: |
-          cd ~/JD_scripts
-          node jd_nh.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+#       - name: '运行 【京东年货节】'
+#         run: |
+#           cd ~/JD_scripts
+#           node jd_nh.js
+#         env:
+#           JD_COOKIE: ${{ secrets.JD_COOKIE }}
+#           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
       
       - name: '运行 【京东压岁钱】'
