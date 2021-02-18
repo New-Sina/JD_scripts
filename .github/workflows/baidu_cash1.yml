@@ -1,9 +1,9 @@
-name: 百度极速版
+name: 百度提现
 
 on:
   workflow_dispatch:
   schedule:
-     - cron: '*/30 * * * *'
+     - cron: '0 6 * * *'
   watch:
     types: started
 jobs:
