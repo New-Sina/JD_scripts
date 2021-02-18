@@ -36,13 +36,18 @@ jobs:
           git checkout main
           npm install
           
-      - name: '运行 【步步宝】'
+      - name: '运行 【步步宝Android】'
         run: |
           cd ~/dog_scripts
           node bbb_compose.js
         env:
           TZ: Asia/shanghai
-    #      BARK_PUSH: ${{ secrets.BARK_PUSH }}
+      
+
+    
+    
+    
+    
  
 
  
