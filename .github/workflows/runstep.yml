@@ -1,0 +1,37 @@
+name: runstep
+
+
+on:
+  workflow_dispatch:
+  schedule:
+     - cron: '0/15 * * * *'
+  watch:
+    types: started
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    env:
+        RUNSTEP_TOKEN: ${{ secrets.RUNSTEP_TOKEN }}
+        RUNSTEP_KEY: ${{ secrets.RUNSTEP_KEY }}
+        
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+        
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install
+        run: |
+          npm install
+      - name: '运行 【runstep】'
+        if: env.RUNSTEP_TOKEN
+        run: |
+          node runstep.js
+        env:
+          TZ: Asia/shanghai
+       
+       
+       
