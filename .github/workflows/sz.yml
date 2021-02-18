@@ -31,3 +31,4 @@ jobs:
           node sz.js
         env:
           TZ: Asia/shanghai
+
