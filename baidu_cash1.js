@@ -31,13 +31,13 @@ if ($.isNode()) {
   } else {
   BDCookie = process.env.BAIDU_COOKIE.split()
   };
-  if (process.env.BAIDU_CASH && process.env.BAIDU_CASH.indexOf('&') > -1) {
-  BDCASH = process.env.BAIDU_CASH.split('&');
+  if (process.env.BAIDU_CASH1 && process.env.BAIDU_CASH1.indexOf('&') > -1) {
+  BDCASH = process.env.BAIDU_CASH1.split('&');
   }
- else if (process.env.BAIDU_CASH && process.env.BAIDU_CASH.indexOf('\n') > -1) {
-  BDCASH = process.env.BAIDU_CASH.split('\n');
+ else if (process.env.BAIDU_CASH1 && process.env.BAIDU_CASH1.indexOf('\n') > -1) {
+  BDCASH = process.env.BAIDU_CASH1.split('\n');
   } else {
-  BDCASH = [process.env.BAIDU_CASH]
+  BDCASH = [process.env.BAIDU_CASH1]
   }
 } else if (!$.isNode()&&baiducks && baiducks.indexOf('&')>-1){
   BDCookie = baiducks.split("&")
@@ -74,8 +74,8 @@ if ($.isNode()) {
       await userInfo();
       await $.wait(1000);
       if ($.isNode()) {
-        if (process.env.BAIDU_TASK) {
-         taskON = process.env.BAIDU_TASK
+        if (process.env.BAIDU_TASK1) {
+         taskON = process.env.BAIDU_TASK1
        }
       } 
       if (taskON == "true") {
