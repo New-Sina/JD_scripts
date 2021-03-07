@@ -18,15 +18,12 @@ hostname = *.snssdk.com
 [rewrite local]
 /luckycat/hotsoon/v1/task/done/daily_read_\d+m? url script-request-header https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js
 /luckycat/hotsoon/v1/task/done/draw_excitation_ad? url script-request-header https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js
-/luckycat/hotsoon/v1/task/sign_in_detail? script-request-header https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js
+/luckycat/hotsoon/v1/task/sign_in_detail? script-request-header https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js, requires-body=true, timeout=10, tag=hotsoonsign
 #loon
-http-request ^https:\/\/ib-hl\.snssdk\.com\/luckycat\/hotsoon\/v1/task\/sign_in_detail? 
-http-request ^https:\/\/ib-hl\.snssdk\.com\/luckycat\/hotsoon\/v1/task\/done\/draw_excitation_ad?
-http-request ^https:\/\/ib-hl\.snssdk\.com\/luckycat\/hotsoon\/v1/task\/done\/daily_read_\d+m?
+http-request ^https:\/\/ib-hl\.snssdk\.com\/luckycat\/hotsoon\/v1/task\/sign_in_detail? script-path=https://raw.githubusercontent.com/New-Sina/dog_scripts/main/hotsoon.js, requires-body=true, timeout=10, tag=hotsoonsign
+http-request ^https:\/\/ib-hl\.snssdk\.com\/luckycat\/hotsoon\/v1/task\/done\/draw_excitation_ad? script-path=https://raw.githubusercontent.com/New-Sina/dog_scripts/main/hotsoon.js, requires-body=true, timeout=10, tag=hotsoonad
+http-request ^https:\/\/ib-hl\.snssdk\.com\/luckycat\/hotsoon\/v1/task\/done\/daily_read_\d+m? script-path=https://raw.githubusercontent.com/New-Sina/dog_scripts/main/hotsoon.js, requires-body=true, timeout=10, tag=hotsoonread
 
-http-request /luckycat/hotsoon/v1/task/done/daily_read_\d+m? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js, requires-body=true, timeout=10, tag=hotsoonread
-http-request /luckycat/hotsoon/v1/task/done/draw_excitation_ad? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js, requires-body=true, timeout=10, tag=hotsoonad
-http-request /luckycat/hotsoon/v1/task/sign_in_detail? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js, requires-body=true, timeout=10, tag=hotsoonsign
 #surge
 hotsoonsign = type=http-request,pattern=/luckycat/hotsoon/v1/task/sign_in_detail?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js,script-update-interval=0
 hotsoonad = type=http-request,pattern=/luckycat/hotsoon/v1/task/done/draw_excitation_ad?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js,script-update-interval=0
