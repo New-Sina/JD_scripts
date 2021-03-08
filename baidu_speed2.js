@@ -21,7 +21,7 @@ let UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/605
 
 if(!$.isNode()&&baiducks && baiducks.indexOf('&')==-1){
   CookieArr.push(baiducks);
-    cashArr.push($.getdata("cash_baidu")||30)
+    cashArr.push($.getdata("cash_baidu")||5)
 } else {
 if ($.isNode()) {
   if (process.env.BAIDU_COOKIE2 && process.env.BAIDU_COOKIE2.indexOf('&') > -1) {
